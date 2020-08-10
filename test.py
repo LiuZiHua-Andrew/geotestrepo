@@ -10,7 +10,7 @@ try:
     # cmd = f"ogr2ogr -f CSV -dialect sqlite -sql 'SELECT ST_X(ST_Centroid(ST_Transform(geometry, 4326))) AS Long, ST_Y(ST_Centroid(ST_Transform(geometry, 4326))) AS Lat, * FROM AU_Buildings' outputt.csv AU_Buildings.json"
     # os.system(cmd)
     subprocess.run(["ogr2ogsr","-f","geojson","-t_srs","epsg:4326","outputexception.geojon","AU_Buildings.json"])
-except subprocess.CalledProcessError as e:        
+except Exception as e:        
     print(e.output)
     print("Here is the error catch block")
 
