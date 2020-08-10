@@ -24,7 +24,7 @@ def lambda_handler(event, context):
     # print(response)
     #cmd="cd /opt/lib && ls"
     try:
-        direct_output = subprocess.check_output("ls", shell=True)
+        direct_output = subprocess.run(["ls"])
     except subprocess.CalledProcessError as e:        
         print(e.output)
     
