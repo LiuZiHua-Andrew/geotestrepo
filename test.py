@@ -7,7 +7,7 @@ import subprocess
 #s3_client = boto3.client('s3')
 
 try:  
-    cmd = f"/opt/bin/ogr2ogr -f CSV -dialect sqlite -sql 'SELECT ST_X(ST_Centroid(ST_Transform(geometry, 4326))) AS Long, ST_Y(ST_Centroid(ST_Transform(geometry, 4326))) AS Lat, * FROM outputt' outputt.csv AU_Buildings.json"
+    cmd = f"ogr2ogr -f CSV -dialect sqlite -sql 'SELECT ST_X(ST_Centroid(ST_Transform(geometry, 4326))) AS Long, ST_Y(ST_Centroid(ST_Transform(geometry, 4326))) AS Lat, * FROM outputt' outputt.csv AU_Buildings.json"
     os.system(cmd)
 except subprocess.CalledProcessError as e:        
     print(e.output)
