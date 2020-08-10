@@ -6,7 +6,7 @@ import subprocess
 
 #s3_client = boto3.client('s3')
 try:
-    direct_output = subprocess.run(["ls"])
+    direct_output = subprocess.run(["ls", "-l"])s
 except subprocess.CalledProcessError as e:        
     print(e.output)
 
