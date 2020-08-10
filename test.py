@@ -12,6 +12,7 @@ try:
     subprocess.run(["ogr2ogr","-f","geojson","-t_srs","epsg:43","outputexception.geojon","AU_Buildings.json"])
 except subprocess.CalledProcessError as e:        
     print(e.output)
+    print("Here is the error catch block")
 
 def lambda_handler(event, context):
     bucketname="lambda-test-andrew"
