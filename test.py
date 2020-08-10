@@ -11,7 +11,7 @@ try:
     # os.system(cmd)
     subprocess.run(["ogr2ogsr","-f","geojson","-t_srs","epsg:4326","outputexception.geojon","AU_Buildings.json"])
 except Exception as e:        
-    print(e.output)
+    print(e)
     print("Here is the error catch block")
 
 def lambda_handler(event, context):
