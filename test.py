@@ -25,7 +25,7 @@ def lambda_handler(event, context):
     #cmd="cd /opt/lib && ls"
     try:
         direct_output = subprocess.check_output("ogr2ogr", shell=True)
-    catch subprocess.CalledProcessError as e:        
+    except subprocess.CalledProcessError as e:        
         print(e.output)
     
     #cmd = f"/opt/bin/ogr2ogr -f CSV -dialect sqlite -sql 'SELECT ST_X(ST_Centroid(ST_Transform(geometry, 4326))) AS Long, ST_Y(ST_Centroid(ST_Transform(geometry, 4326))) AS Lat, * FROM outputt' outputt.csv AU_Buildings.json"
