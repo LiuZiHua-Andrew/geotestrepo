@@ -27,6 +27,6 @@ def lambda_handler(event, context):
     direct_output = subprocess.check_output("ogr2ogr", shell=True)
     print(direct_output)
     
-    cmd = f"/opt/bin/ogr2ogr -f CSV -dialect sqlite -sql 'SELECT ST_X(ST_Centroid(ST_Transform(geometry, 4326))) AS Long, ST_Y(ST_Centroid(ST_Transform(geometry, 4326))) AS Lat, * FROM outputt' outputt.csv AU_Buildings.json"
-    os.system(cmd)
+    #cmd = f"/opt/bin/ogr2ogr -f CSV -dialect sqlite -sql 'SELECT ST_X(ST_Centroid(ST_Transform(geometry, 4326))) AS Long, ST_Y(ST_Centroid(ST_Transform(geometry, 4326))) AS Lat, * FROM outputt' outputt.csv AU_Buildings.json"
+    #os.system(cmd)
     
